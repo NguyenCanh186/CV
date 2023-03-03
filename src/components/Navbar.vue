@@ -56,7 +56,7 @@
                 href="/portfolio"
                 @click.prevent="$emit('scroll', 'portfolio')"
                 :class="{ 'text-light': nightMode }"
-                >Portfolio</a
+                >Project</a
               >
             </li>
             <li class="nav-item mx-2">

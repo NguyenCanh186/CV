@@ -129,13 +129,13 @@ export default {
   },
   data() {
     return {
-      email: "",
+      email: null,
       name: "",
       text: "",
       showSnackbar: false,
       snackbarMessage: "",
       snackbarColor: "",
-    };
+      };
   },
   methods: {
     closeSnackbar(val) {
@@ -145,17 +145,26 @@ export default {
         }, 1000);
       }
     },
+    validEmail: function (email) {
+      var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(email);
+    },
     sendEmail() {
       if (!this.email || !this.name || !this.text) {
         this.showSnackbar = true;
-        this.snackbarMessage = "Please all the fields";
+        this.snackbarMessage = "Vui lòng điền tất cả các trường";
         this.snackbarColor = "#64808E";
-      } else {
+      } else if (this.email !== "" && !this.validEmail(this.email)) {
+        this.showSnackbar = true;
+        this.snackbarMessage = "Email sai định dạng"
+        this.snackbarColor = "#64808E";
+      }
+      else {
         var obj = {
           user_email: this.email,
           from_name: this.name,
           message_html: this.text,
-          to_name: "Mahy Mohab",
+          to_name: "Cảnh Nguyễn",
         };
 
         emailjs
@@ -168,7 +177,7 @@ export default {
           .then(
             (result) => {
               this.showSnackbar = true;
-              this.snackbarMessage = "Thanks! Message recieved.";
+              this.snackbarMessage = "Cảm ơn bạn! Mình sẽ phản hồi lại sớm nhất.";
               this.snackbarColor = "#1aa260";
 
               this.email = "";
@@ -177,7 +186,7 @@ export default {
             },
             (error) => {
               this.showSnackbar = true;
-              this.snackbarMessage = "Oops! Something went wrong.";
+              this.snackbarMessage = "Đã có lỗi sảy ra! Vui lòng thử lại";
               this.snackbarColor = "#64808E";
             }
           );

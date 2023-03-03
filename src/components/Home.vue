@@ -11,45 +11,46 @@
     >
       <div class="row align-items-center">
         <div class="col-xl-6 col-bg-6 col-md-6 col-sm-12 text-center">
-          <img :src="picture" />
+          <img style="border-radius: 50%" :src="picture" />
         </div>
         <div class="col-xl-6 col-bg-6 col-md-6 col-sm-12 pt-5">
           <span
             class="home-title"
             :class="{ pgray: !nightMode, 'text-light': nightMode }"
-            >Welcome to my portfolio!</span
-          >
+            >Nguyễn Thế Cảnh</span
+          > <br>
+          <p>( Lập trình viên fullstack )</p>
           <div>
             <p v-html="description"></p>
           </div>
           <div class="text-center pb-4">
             <button
-              class="btn btn-outline-secondary mx-2 "
-              @click="open('linkedin')"
-              v-tooltip.bottom="'LinkedIn'"
+                class="btn btn-outline-success mx-2 "
+                @click="open('linkedin')"
+                v-tooltip.bottom="'Facebook'"
             >
-              <i class="fab fa-linkedin"></i>
+              <i class="fa-brands fa-square-facebook"></i>
             </button>
             <button
-              class="btn btn-outline-secondary mx-2"
-              @click="open('github')"
-              v-tooltip.bottom="'GitHub'"
+                class="btn btn-outline-info mx-2"
+                @click="open('github')"
+                v-tooltip.bottom="'Github'"
             >
-              <i class="fab fa-github"></i>
+              <i class="fa-brands fa-github"></i>
             </button>
             <button
-              class="btn btn-outline-secondary mx-2"
-              @click="open('behance')"
-              v-tooltip.bottom="'behance'"
+                class="btn btn-outline-info mx-2"
+                @click="open('behance')"
+                v-tooltip.bottom="'Skype'"
             >
-              <i class="fab fa-behance"></i>
+              <i class="fa-brands fa-skype"></i>
             </button>
             <button
-              class="btn btn-outline-secondary mx-2"
-              @click="open('resume')"
-              v-tooltip.bottom="'Resume'"
+                class="btn btn-outline-info mx-2"
+                @click="open('resume')"
+                v-tooltip.bottom="'Blog'"
             >
-              <i class="fa fa-file"></i>
+              <i class="fa-solid fa-blog"></i>
             </button>
           </div>
         </div>
@@ -107,7 +108,7 @@ export default {
 
 <style scoped>
 .home-title {
-  font-size: 32px;
+  font-size: 50px;
   font-weight: 500;
 }
 
