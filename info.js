@@ -385,8 +385,8 @@ let info = {
       technologies: ["Spring boot", "Spring security", "SQL", "Database", "VueJS2", "Bootstrap"],
       category: "Web App",
       date: "08/2022 - hiện tại",
-      github: "https://github.com/mahy209/online-examination.git",
-      visit: "https://github.com/mahy209/online-examination.git",
+      github: "https://github.com/",
+      visit: "https://github.com/",
       description:
         "Xếp hạng tín dụng TP bank là hệ thống xếp hạng các khách hàng của ngân hàng TP bank dựa trên vốn chủ đầu tư, báo cáo tài chính, tổng tài sản... để có thể đưa ra các khoản vay thích hợp "
     },
